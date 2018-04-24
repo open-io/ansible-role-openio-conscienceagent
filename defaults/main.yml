@@ -1,5 +1,5 @@
-# roles/ROLENAME/defaults/main.yml
+# roles/conscienceagent/defaults/main.yml
 ---
-openio_ROLENAME_namespace: "OPENIO"
-openio_ROLENAME_serviceid: "0"
+openio_conscienceagent_namespace: "OPENIO"
+openio_conscienceagent_serviceid: "0"
 ...

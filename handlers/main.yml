@@ -1,8 +1,9 @@
-# roles/ROLENAME/handlers/main.yml
+# roles/conscienceagent/handlers/main.yml
 ---
-- name: restart ROLENAME
-  service:
-    name: "{{ ROLENAME_service }}"
-    state: restarted
-
+- name: "start {{openio_conscienceagent_namespace}}-conscienceagent-{{openio_conscienceagent_serviceid}}"
+  command: "gridinit_cmd start {{openio_conscienceagent_namespace}}-conscienceagent-{{openio_conscienceagent_serviceid}}"
+- name: "stop {{openio_conscienceagent_namespace}}-conscienceagent-{{openio_conscienceagent_serviceid}}"
+  command: "gridinit_cmd stop {{openio_conscienceagent_namespace}}-conscienceagent-{{openio_conscienceagent_serviceid}}"
+- name: "restart {{openio_conscienceagent_namespace}}-conscienceagent-{{openio_conscienceagent_serviceid}}"
+  command: "gridinit_cmd restart {{openio_conscienceagent_namespace}}-conscienceagent-{{openio_conscienceagent_serviceid}}"
 ...

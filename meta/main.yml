@@ -1,7 +1,7 @@
 ---
 galaxy_info:
-  author: Cedric DELGEHIER <cedric@openio.io>
-  description: PURPOSE
+  author: Guillaume DELAPORTE <guillaume@openio.io>
+  description: Install and configure an OpenIO conscienceagent
   company: OpenIO
   license: Apache
 

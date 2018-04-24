@@ -1,6 +1,6 @@
-# roles/ROLENAME/vars/Debian.yml
+# roles/conscienceagent/vars/Debian.yml
 # Distribution-specific variables for Ubuntu, Debian, ...
 ---
-ROLENAME_packages:
-  - openio-ROLENAME
+conscienceagent_packages:
+  - openio-sds
 ...

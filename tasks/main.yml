@@ -1,4 +1,4 @@
-# roles/ROLENAME/tasks/main.yml
+# roles/conscienceagent/tasks/main.yml
 ---
 - name: "Include {{ ansible_distribution }} variables"
   include_vars: "{{ item }}"
@@ -28,19 +28,46 @@
     - "{{ ansible_os_family }}.yml"
   tags: install
 
+- name: Test directories presence
+  stat:
+    path: "{{ item }}"
+  register: _dir
+  with_items:
+    - "/etc/gridinit.d/{{ openio_conscienceagent_namespace }}"
+    - "{{ openio_conscienceagent_sysconfig_dir }}/conscienceagent-{{ openio_conscienceagent_serviceid }}"
+    - "{{ openio_conscienceagent_sysconfig_dir }}/watch"
+
+- name: Ensure directories exists
+  file:
+    path: "{{ item.item }}"
+    state: directory
+    owner: openio
+    group: openio
+    mode: 0755
+    recurse: true
+  with_items: "{{ _dir.results }}"
+  when: not item.stat.exists
+  tags: install
+
 - name: Generate configuration files
   template:
-    src: ROLENAME.conf.j2
-    dest: "/etc/oio/sds/{{ openio_ROLENAME_namespace }}/..."
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
     owner: openio
     group: openio
     mode: 0644
-  tags: install
-  register: _ROLENAME_conf
+  with_items:
+    - src: "conscienceagent.yml.j2"
+      dest: "{{ openio_conscienceagent_sysconfig_dir }}/\
+        conscienceagent-{{ openio_conscienceagent_serviceid }}/conscienceagent-{{ openio_conscienceagent_serviceid }}.yml"
+    - src: "gridinit_conscienceagent.conf.j2"
+      dest: "{{ openio_conscienceagent_gridinit_dir }}/conscienceagent-{{ openio_conscienceagent_serviceid }}.conf"
+  register: _conscienceagent_conf
 
-
-- name: restart ROLENAME
-  command: "gridinit_cmd restart  {{openio_ROLENAME_namespace}}-ROLENAME-{{openio_ROLENAME_serviceid}}"
-  when: _ROLENAME_conf.changed
+- name: restart conscienceagent
+  shell: |
+    gridinit_cmd reload
+    gridinit_cmd restart  {{openio_conscienceagent_namespace}}-conscienceagent-{{openio_conscienceagent_serviceid}}
+  when: _conscienceagent_conf.changed
   tags: configure
 ...

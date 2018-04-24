@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+[Service.{{ openio_conscienceagent_namespace }}-conscienceagent-{{ openio_conscienceagent_serviceid }}]
+command=/usr/bin/oio-conscience-agent {{ openio_conscienceagent_sysconfig_dir }}/conscienceagent-{{ openio_conscienceagent_serviceid }}/conscienceagent-{{ openio_conscienceagent_serviceid }}.yml
+enabled=true
+start_at_boot=true
+on_die=respawn
+group={{ openio_conscienceagent_namespace }},conscienceagent,{{ openio_conscienceagent_serviceid }}
+uid=openio
+gid=openio
+env.PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
