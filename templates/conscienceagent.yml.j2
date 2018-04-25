@@ -1,6 +1,6 @@
 # {{ ansible_managed }}
 # Namespace name
-namespace: {{openio_conscienceagent_namespace}}
+namespace: {{ openio_conscienceagent_namespace }}
 # Run daemon as user
 user: openio
 #
@@ -8,11 +8,11 @@ user: openio
 log_level: info
 log_facility: LOG_LOCAL0
 log_address: /dev/log
-syslog_prefix: OIO,{{openio_conscienceagent_namespace}},conscienceagent,1
+syslog_prefix: OIO,{{ openio_conscienceagent_namespace }},conscienceagent,1
 #
 # Include path for services conf
 # # example service is provided in service-watch.yml
-include_dir: /etc/oio/sds/{{openio_conscienceagent_namespace}}/watch
+include_dir: {{ openio_conscienceagent_sysconfig_dir }}/watch
 #
 #
 # Global checks configuration
