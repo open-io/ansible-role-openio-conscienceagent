@@ -4,4 +4,6 @@
 - hosts: all
   become: true
   roles:
+    - role: repo
+    - role: gridinit
     - role: role_under_test
