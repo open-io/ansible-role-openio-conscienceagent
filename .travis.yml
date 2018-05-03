@@ -4,7 +4,7 @@ sudo: required
 
 env:
   global:
-      - ANSIBLE_VERSION=2.5
+    - ANSIBLE_VERSION=2.5
   matrix:
     - DISTRIBUTION: centos
       VERSION: 7
