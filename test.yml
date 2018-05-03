@@ -17,7 +17,7 @@
           [{{ NS }}]
           # endpoints
           conscience=172.17.0.2:6000
-          zookeeper=172.17.0.2:6005
+          #zookeeper=172.17.0.2:6005
           proxy=172.17.0.2:6006
           event-agent=beanstalk://172.17.0.2:6014
           ns.meta1_digits=3
@@ -38,5 +38,6 @@
       openio_meta0_namespace: "{{ NS }}"
     - role: oioproxy
       openio_oioproxy_namespace: "{{ NS }}"
-
-
+    - role: role_under_test
+      openio_conscienceagent_namespace: "{{ NS }}"
+...
