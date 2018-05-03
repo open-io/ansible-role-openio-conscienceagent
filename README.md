@@ -1,6 +1,3 @@
-
-__
-
 [![Build Status](https://travis-ci.org/open-io/ansible-role-openio-conscienceagent.svg?branch=master)](https://travis-ci.org/open-io/ansible-role-openio-conscienceagent)
 # Ansible role `conscienceagent`
 
@@ -18,7 +15,8 @@ An Ansible role for Conscience agent. Specifically, the responsibilities of this
 
 | Variable   | Default | Comments (type)  |
 | :---       | :---    | :---             |
-| `openio_conscienceagent_...` | `...`   | ...              |
+| `openio_conscienceagent_namespace` | `"OPENIO"` | Namespace |
+| `openio_conscienceagent_serviceid` | `"0"` | ID in gridinit |
 
 ## Dependencies
 
