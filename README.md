@@ -59,8 +59,8 @@ No dependencies.
       openio_conscience_namespace: "{{ NS }}"
       openio_conscience_bind_address: "{{ ansible_default_ipv4.address }}"
       openio_conscience_pools: []
-    - role: meta0
-      openio_meta0_namespace: "{{ NS }}"
+    - role: meta
+      openio_meta_namespace: "{{ NS }}"
     - role: oioproxy
       openio_oioproxy_namespace: "{{ NS }}"
     - role: conscienceagent
