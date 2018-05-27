@@ -17,6 +17,7 @@ An Ansible role for Conscience agent. Specifically, the responsibilities of this
 | :---       | :---    | :---             |
 | `openio_conscienceagent_namespace` | `"OPENIO"` | Namespace |
 | `openio_conscienceagent_serviceid` | `"0"` | ID in gridinit |
+| `openio_conscienceagent_version` | `"*"` | Install a specific version |
 
 ## Dependencies
 
