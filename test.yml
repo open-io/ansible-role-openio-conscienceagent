@@ -30,6 +30,7 @@
     - role: repo
     - role: gridinit
       openio_gridinit_namespace: "{{ NS }}"
+      openio_gridinit_per_ns: true
     - role: conscience
       openio_conscience_namespace: "{{ NS }}"
       openio_conscience_bind_address: "{{ ansible_default_ipv4.address }}"
