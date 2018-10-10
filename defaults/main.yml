@@ -4,4 +4,7 @@ openio_conscienceagent_namespace: "OPENIO"
 openio_conscienceagent_serviceid: "0"
 
 openio_conscienceagent_version: 'latest'
+
+openio_conscienceagent_gridinit_dir: "/etc/gridinit.d/{{ openio_conscienceagent_namespace }}"
+openio_conscienceagent_gridinit_file_prefix: ""
 ...

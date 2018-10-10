@@ -61,7 +61,8 @@
       dest: "{{ openio_conscienceagent_sysconfig_dir }}/\
         conscienceagent-{{ openio_conscienceagent_serviceid }}/conscienceagent-{{ openio_conscienceagent_serviceid }}.yml"
     - src: "gridinit_conscienceagent.conf.j2"
-      dest: "{{ openio_conscienceagent_gridinit_dir }}/conscienceagent-{{ openio_conscienceagent_serviceid }}.conf"
+      dest: "{{ openio_conscienceagent_gridinit_dir }}/{{ openio_conscienceagent_gridinit_file_prefix }}\
+        conscienceagent-{{ openio_conscienceagent_serviceid }}.conf"
   register: _conscienceagent_conf
 
 - name: restart conscienceagent

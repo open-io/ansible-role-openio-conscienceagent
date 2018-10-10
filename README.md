@@ -18,6 +18,8 @@ An Ansible role for Conscience agent. Specifically, the responsibilities of this
 | `openio_conscienceagent_namespace` | `"OPENIO"` | Namespace |
 | `openio_conscienceagent_serviceid` | `"0"` | ID in gridinit |
 | `openio_conscienceagent_version` | `latest` | Install a specific version |
+| `openio_conscienceagent_gridinit_dir` | `/etc/gridinit.d/{{ openio_conscienceagent_namespace }}` | Path to copy the gridinit conf |
+| `openio_conscienceagent_gridinit_file_prefix` | `""` | Maybe set it to {{ openio_conscienceagent_namespace }}- for old gridinit's style |
 
 ## Dependencies
 
