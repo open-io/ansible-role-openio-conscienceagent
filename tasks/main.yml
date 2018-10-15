@@ -79,6 +79,8 @@
   shell: |
     gridinit_cmd reload
     gridinit_cmd restart  {{ openio_conscienceagent_namespace }}-conscienceagent-{{ openio_conscienceagent_serviceid }}
-  when: _conscienceagent_conf.changed
+  when:
+    - _conscienceagent_conf.changed
+    - not openio_conscienceagent_provision_only
   tags: configure
 ...
