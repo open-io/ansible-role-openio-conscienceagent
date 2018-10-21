@@ -8,7 +8,7 @@ user: openio
 log_level: info
 log_facility: LOG_LOCAL0
 log_address: /dev/log
-syslog_prefix: OIO,{{ openio_conscienceagent_namespace }},conscienceagent,1
+syslog_prefix: OIO,{{ openio_conscienceagent_namespace }},conscienceagent,{{ openio_conscienceagent_serviceid }}
 #
 # Include path for services conf
 # # example service is provided in service-watch.yml
