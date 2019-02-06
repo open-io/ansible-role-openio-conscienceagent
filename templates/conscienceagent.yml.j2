@@ -17,8 +17,8 @@ include_dir: {{ openio_conscienceagent_sysconfig_dir }}/watch
 #
 # Global checks configuration
 # Check interval (in seconds)
-check_interval: 5
+check_interval: {{ openio_conscienceagent_check_interval }}
 # Rise (number of consecutive successful checks to switch service status to up)
-rise: 1
+rise: {{ openio_conscienceagent_check_rise }}
 # Fall (number of consecutive unsuccessful checks to switch service status to down)
-fall: 2
+fall: {{ openio_conscienceagent_check_fall }}

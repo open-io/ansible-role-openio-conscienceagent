@@ -21,6 +21,9 @@ An Ansible role for Conscience agent. Specifically, the responsibilities of this
 | `openio_conscienceagent_gridinit_dir` | `/etc/gridinit.d/{{ openio_conscienceagent_namespace }}` | Path to copy the gridinit conf |
 | `openio_conscienceagent_gridinit_file_prefix` | `""` | Maybe set it to {{ openio_conscienceagent_namespace }}- for old gridinit's style |
 | `openio_conscienceagent_provision_only`       | `false` | Provision only without restarting services |
+| `openio_conscienceagent_check_interval`       | `5` | Check inverval in seconds |
+| `openio_conscienceagent_check_rise`       | `1` | Number of consecutive successful checks to switch service status to up |
+| `openio_conscienceagent_check_fall`       | `2` | Number of consecutive unsuccessful checks to switch service status to down |
 
 
 ## Dependencies
