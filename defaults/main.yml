@@ -1,7 +1,7 @@
 # roles/conscienceagent/defaults/main.yml
 ---
-openio_conscienceagent_namespace: "OPENIO"
-openio_conscienceagent_serviceid: "0"
+openio_conscienceagent_namespace: "{{ namespace | default('OPENIO') }}"
+openio_conscienceagent_serviceid: "{{ 0 + openio_legacy_serviceid | d(0) | int }}"
 
 openio_conscienceagent_version: 'latest'
 

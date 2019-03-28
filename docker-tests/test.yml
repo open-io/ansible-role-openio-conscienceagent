@@ -1,0 +1,30 @@
+# Test playbook
+---
+- hosts: all
+  become: true
+  vars:
+    NS: TRAVIS
+  roles:
+    - role: repository
+      openio_repository_openstack_release: 'queens'
+      openio_repository_no_log: false
+      openio_repository_products:
+        sds:
+          release: "18.10"
+    - role: users
+    - role: namespace
+      openio_namespace_name: "{{ NS }}"
+    - role: gridinit
+      openio_gridinit_namespace: "{{ NS }}"
+      openio_gridinit_per_ns: true
+    - role: conscience
+      openio_conscience_namespace: "{{ NS }}"
+      openio_conscience_bind_address: "{{ ansible_default_ipv4.address }}"
+      openio_conscience_pools: []
+    - role: meta
+      openio_meta_namespace: "{{ NS }}"
+    - role: oioproxy
+      openio_oioproxy_namespace: "{{ NS }}"
+    - role: role_under_test
+      openio_conscienceagent_namespace: "{{ NS }}"
+...
