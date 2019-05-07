@@ -46,12 +46,24 @@
         {{ openio_conscienceagent_servicename }}.conf"
   register: _conscienceagent_conf
 
-- name: restart conscienceagent
+- name: "restart conscienceagent to apply the new configuration"
   shell: |
     gridinit_cmd reload
     gridinit_cmd restart  {{ openio_conscienceagent_namespace }}-{{ openio_conscienceagent_servicename }}
+  register: _restart_conscienceagent
   when:
-    - _conscienceagent_conf.changed
+    - _conscienceagent_conf is changed
     - not openio_conscienceagent_provision_only
   tags: configure
+
+- block:
+    - name: "Ensure conscienceagent is started"
+      command: gridinit_cmd start {{ openio_conscienceagent_namespace }}-{{ openio_conscienceagent_servicename }}
+      register: _start_conscienceagent
+      changed_when: '"Success" in _start_conscienceagent.stdout'
+      when:
+        - not openio_conscienceagent_provision_only
+        - _restart_conscienceagent is skipped
+      tags: configure
+  when: openio_bootstrap | d(false)
 ...
