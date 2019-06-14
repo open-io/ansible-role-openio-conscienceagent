@@ -19,6 +19,8 @@
       openio_conscience_namespace: "{{ NS }}"
       openio_conscience_bind_address: "{{ ansible_default_ipv4.address }}"
       openio_conscience_pools: []
+      openio_conscience_inventory_groupname: all
+      openio_conscience_multiple: false
     - role: meta
       openio_meta_namespace: "{{ NS }}"
     - role: oioproxy
