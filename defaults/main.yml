@@ -9,6 +9,7 @@ openio_conscienceagent_gridinit_dir: "/etc/gridinit.d/{{ openio_conscienceagent_
 openio_conscienceagent_gridinit_file_prefix: ""
 
 openio_conscienceagent_provision_only: false
+openio_conscienceagent_package_upgrade: "{{ openio_package_upgrade | d(false) }}"
 openio_conscienceagent_check_interval: 5
 openio_conscienceagent_check_rise: 1
 openio_conscienceagent_check_fall: 2
