@@ -1,4 +1,3 @@
-# roles/conscienceagent/defaults/main.yml
 ---
 openio_conscienceagent_namespace: "{{ namespace | default('OPENIO') }}"
 openio_conscienceagent_serviceid: "{{ 0 + openio_legacy_serviceid | d(0) | int }}"
@@ -13,4 +12,11 @@ openio_conscienceagent_package_upgrade: "{{ openio_package_upgrade | d(false) }}
 openio_conscienceagent_check_interval: 5
 openio_conscienceagent_check_rise: 1
 openio_conscienceagent_check_fall: 2
+
+openio_conscienceagent_sysconfig_dir: "/etc/oio/sds/{{ openio_conscienceagent_namespace }}"
+openio_conscienceagent_servicename: "conscienceagent-{{ openio_conscienceagent_serviceid }}"
+
+openio_conscienceagent_definition_file: >
+  "{{ openio_conscienceagent_sysconfig_dir }}/
+  {{ openio_conscienceagent_servicename }}/{{ openio_conscienceagent_servicename }}.conf"
 ...
