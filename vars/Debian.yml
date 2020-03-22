@@ -2,6 +2,7 @@
 # Distribution-specific variables for Ubuntu, Debian, ...
 ---
 conscienceagent_packages:
-  - "{{ 'openio-sds' if openio_conscienceagent_version == 'latest' else 'openio-sds=' ~ openio_conscienceagent_version }}"
+  - "{{ 'openio-sds' if openio_conscienceagent_version == 'latest' \
+     else 'openio-sds=' ~ openio_conscienceagent_version }}"
 syslog_user: syslog
 ...
