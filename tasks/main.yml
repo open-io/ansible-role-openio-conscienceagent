@@ -24,7 +24,6 @@
     group: "{{ item.group | default('openio') }}"
     mode: "{{ item.mode | default(0755) }}"
   with_items:
-    - path: "/etc/gridinit.d/{{ openio_conscienceagent_namespace }}"
     - path: "{{ openio_conscienceagent_sysconfig_dir }}/{{ openio_conscienceagent_servicename }}"
     - path: "{{ openio_conscienceagent_sysconfig_dir }}/watch"
     - path: "/var/log/oio/sds/{{ openio_conscienceagent_namespace }}/{{ openio_conscienceagent_servicename }}"
