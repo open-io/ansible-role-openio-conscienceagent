@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/open-io/ansible-role-openio-conscienceagent.svg?branch=master)](https://travis-ci.org/open-io/ansible-role-openio-conscienceagent)
+[![Build Status](https://travis-ci.org/open-io/ansible-role-openio-conscienceagent.svg?branch=20.04)](https://travis-ci.org/open-io/ansible-role-openio-conscienceagent)
 # Ansible role `conscienceagent`
 
 An Ansible role for Conscience agent. Specifically, the responsibilities of this role are to:
