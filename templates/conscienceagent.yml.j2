@@ -12,7 +12,7 @@ syslog_prefix: OIO,{{ openio_conscienceagent_namespace }},conscienceagent,{{ ope
 #
 # Include path for services conf
 # # example service is provided in service-watch.yml
-include_dir: {{ openio_conscienceagent_sysconfig_dir }}/watch
+include_dir: "{{ openio_conscienceagent_include_dir }}"
 #
 #
 # Global checks configuration
