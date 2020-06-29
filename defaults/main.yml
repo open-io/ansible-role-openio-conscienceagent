@@ -6,6 +6,7 @@ openio_conscienceagent_version: 'latest'
 
 openio_conscienceagent_gridinit_dir: "{{ openio_gridinit_d | d('/etc/gridinit.d/') }}"
 openio_conscienceagent_gridinit_file_prefix: "{{ openio_conscienceagent_namespace }}-"
+openio_conscienceagent_include_dir: "{{ openio_conscienceagent_sysconfig_dir }}/watch"
 
 openio_conscienceagent_provision_only: "{{ openio_maintenance_mode | d(false) | bool }}"
 openio_conscienceagent_package_upgrade: "{{ openio_package_upgrade | d(false) }}"
